@@ -10,10 +10,26 @@ body{
     background-position: center center;
     z-index: 5;
     font-family: 'Open Sans Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
 
     .title-img-container{
         display: flex;
         justify-content: center;
+
+        .title-img{
+            width: 500px;
+        }
+    }
+
+    .contenido-principal{
+        display: flex;
+        flex-direction: column;
+
+        .contenido-gastos{
+            display: flex;
+          
+        }
     }
 }
 
@@ -22,4 +38,12 @@ h1{
     display: none;
 }
   
-  
+@media only screen and (max-width: 600px){
+    body{
+        .title-img-container{
+            .title-img{
+                width: 250px;
+            }
+        }
+    }
+}
