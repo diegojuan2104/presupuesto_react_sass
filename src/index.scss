@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("./img/ladrillo-bg2.jpg");
+    height: 100vh;
+    background-position: center center;
+    z-index: 5;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+    .title-img-container{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+h1{
+    display: none;
+}
+  
+  
