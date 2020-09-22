@@ -21,16 +21,21 @@ body{
             width: 500px;
         }
     }
+}
 
-    .contenido-principal{
-        display: flex;
-        flex-direction: column;
 
-        .contenido-gastos{
-            display: flex;
-          
-        }
+.contenido-principal{
+    display: flex;
+    flex-direction: column;
+
+    .pregunta-box{
+        align-self: center;
     }
+    .contenido-gastos{
+        display: flex;
+        justify-content: center;
+        
+    }   
 }
 
 

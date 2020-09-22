@@ -1,14 +1,29 @@
 import React, { useState } from "react";
 
 import Pregunta from "./components/Pregunta/pregunta.component";
-import Formulario from "./components/Formulario/formulario.component"
+import Formulario from "./components/Formulario/formulario.component";
+import Listado from "./components/Listado/listado.component"
 
-import './index.scss'
 
+import "./index.scss";
+ 
 function App() {
-  const [presupuesto, guardarPresupuesto] = useState(0);
 
+  const [presupuesto, guardarPresupuesto] = useState(0);
   const [restante, guardarRestante] = useState(0);
+  const [mostrarPregunta, actualizarPregunta] = useState(true);
+  const [gastos, guardarGastos] = useState([]);
+
+
+  //Cuando agreguemos un nuevo gasto
+
+  const agregarNuevoGasto = gasto =>{
+      guardarGastos([
+        ...gastos,
+        gasto
+      ])
+  }
+
 
   return (
     <div className="container">
@@ -19,20 +34,22 @@ function App() {
         </div>
 
         <div className="contenido-principal">
-          <Pregunta
-            guardarPresupuesto={guardarPresupuesto}
-            guardarRestante={guardarRestante}
-          />
-
-          <div className="cotenido-gastos">
-
-            <div>
-              <Formulario/>
+          {mostrarPregunta ? (
+            <div className="pregunta-box">
+              <Pregunta
+                guardarPresupuesto={guardarPresupuesto}
+                guardarRestante={guardarRestante}
+                actualizarPregunta={actualizarPregunta}
+              />
             </div>
-            
-            <div>2</div>
-
-          </div>
+          ) : (
+            <div className="contenido-gastos">
+                <Formulario  
+                  agregarNuevoGasto={agregarNuevoGasto}
+                />
+                <Listado gastos={gastos}/>
+            </div>
+          )}
         </div>
       </header>
     </div>

@@ -3,7 +3,7 @@ import './pregunta.styles.scss'
 
 import Error from "../Error/error.component"
 
-const Pregunta = ({guardarPresupuesto, guardarRestante}) => {
+const Pregunta = ({guardarPresupuesto, guardarRestante, actualizarPregunta}) => {
 
   const[cantidad, guardarCantidad] = useState(0);
 
@@ -26,10 +26,11 @@ const Pregunta = ({guardarPresupuesto, guardarRestante}) => {
       guardarError(true);
       return;
     }
-    guardarError(false);
 
+    guardarError(false);
     guardarPresupuesto(cantidad);
     guardarRestante(cantidad);
+    actualizarPregunta(false);
   }
 
   return (

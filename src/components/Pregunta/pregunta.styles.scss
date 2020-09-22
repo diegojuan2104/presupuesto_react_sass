@@ -6,6 +6,8 @@
     margin: 20px;
     border-radius: 5px;
     align-items: center;
+    
+
 
     .form-title{
         font-size: 25px;
@@ -21,7 +23,7 @@
     .submit-button{
 
         background-color:#007bff;
-
+        min-width: 500px;
         &:hover{
             font-size: 15px;
             cursor: pointer;
