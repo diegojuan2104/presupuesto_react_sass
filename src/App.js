@@ -1,28 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Pregunta from "./components/Pregunta/pregunta.component";
 import Formulario from "./components/Formulario/formulario.component";
-import Listado from "./components/Listado/listado.component"
-
+import Listado from "./components/Listado/listado.component";
+import ControlPresupuesto from "./components/ControlPresupuesto/control-presupuesto.component";
 
 import "./index.scss";
- 
-function App() {
 
+function App() {
   const [presupuesto, guardarPresupuesto] = useState(0);
   const [restante, guardarRestante] = useState(0);
   const [mostrarPregunta, actualizarPregunta] = useState(true);
   const [gastos, guardarGastos] = useState([]);
+  const [gasto, guardarGasto] = useState([]);
+  const [creargasto, guardarCrearGasto] = useState(false);
 
 
-  //Cuando agreguemos un nuevo gasto
+  //UseEffect que actuliza el restante
+  useEffect(() => {
+    if(creargasto){
+    guardarGastos([...gastos, gasto]);
 
-  const agregarNuevoGasto = gasto =>{
-      guardarGastos([
-        ...gastos,
-        gasto
-      ])
-  }
+
+    ///Resta del presupuesto actual 
+    const presupuestoRestante = restante - gasto.cantidad;
+
+    guardarRestante(presupuestoRestante);
+
+    guardarCrearGasto(false);
+    }
+  }, [gasto]);
 
 
   return (
@@ -44,10 +51,16 @@ function App() {
             </div>
           ) : (
             <div className="contenido-gastos">
-                <Formulario  
-                  agregarNuevoGasto={agregarNuevoGasto}
-                />
-                <Listado gastos={gastos}/>
+              <ControlPresupuesto
+                restante={restante}
+                presupuesto={presupuesto}
+              />
+              <Formulario 
+                guardarGasto={guardarGasto}
+                guardarCrearGasto={guardarCrearGasto}
+               />
+
+              <Listado gastos={gastos} />
             </div>
           )}
         </div>

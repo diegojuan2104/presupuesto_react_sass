@@ -24,9 +24,11 @@ form{
     }
 
     .submit-button{
-        background-color:#007bff;
+        background-color:#000;
         border-radius: 5px;
         font-weight: 700;
+        padding: 5px;
+        color:  #fff;
 
         &:hover{
             font-size: 15px;

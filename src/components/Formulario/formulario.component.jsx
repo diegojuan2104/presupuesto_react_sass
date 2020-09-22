@@ -4,7 +4,7 @@ import Error from "../Error/error.component";
 import shortId from "shortid";
 
 import "./formulario.styles.scss";
-const Formulario = ({agregarNuevoGasto}) => {
+const Formulario = ({guardarGasto, guardarCrearGasto}) => {
   const [cantidad, guardarCantidad] = useState("");
   const [nombre, guardarNombre] = useState("");
   const [error, guardarError] = useState(false);
@@ -19,8 +19,8 @@ const Formulario = ({agregarNuevoGasto}) => {
       return;
     }
     guardarError(false);
+    
     //Construir el gasto
-
     const gasto = {
         nombre, 
         cantidad,
@@ -28,7 +28,8 @@ const Formulario = ({agregarNuevoGasto}) => {
     }
 
     //pasar el gasto al componente principal
-    agregarNuevoGasto(gasto);
+    guardarGasto(gasto);
+    guardarCrearGasto(true);
     
     //resetear el form
     guardarNombre("");

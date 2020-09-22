@@ -1,6 +1,8 @@
 import React from "react";
 import Gasto from "../Gasto/gasto.component"
 
+import './listado.styles.scss'
+
 const Listado = ({gastos}) => {
   return( 
   

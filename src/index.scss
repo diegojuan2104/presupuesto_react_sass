@@ -22,8 +22,6 @@ body{
         }
     }
 }
-
-
 .contenido-principal{
     display: flex;
     flex-direction: column;
@@ -34,7 +32,10 @@ body{
     .contenido-gastos{
         display: flex;
         justify-content: center;
-        
+        .presupuesto-listado{
+            display: flex;
+            flex-direction: column;
+        }
     }   
 }
 

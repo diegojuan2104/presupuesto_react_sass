@@ -1,0 +1,22 @@
+.control-presupuesto{
+    padding: 20px;
+    margin: 20px;
+    min-width: 150px;
+    max-height: 150px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    
+    div{
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    .restante{
+        .valor-restante{
+            color: rgb(168, 62, 62);
+            font-weight: 600;
+        }
+    }
+}

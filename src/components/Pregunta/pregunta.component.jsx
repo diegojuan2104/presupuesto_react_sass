@@ -53,7 +53,7 @@ const Pregunta = ({guardarPresupuesto, guardarRestante, actualizarPregunta}) => 
             value="Definir Presupuesto"
         />
       </form>
-    </Fragment>
+    </Fragment> 
   );
 };
 
