@@ -14,8 +14,17 @@
     }
 
     .restante{
-        .valor-restante{
+        .alert-danger{
             color: rgb(168, 62, 62);
+            font-weight: 600;
+        }
+        .alert-warning{
+            color: rgb(255, 157, 0);
+            font-weight: 600;
+        }
+
+        .alert-success{
+            color: rgb(51, 177, 82);
             font-weight: 600;
         }
     }

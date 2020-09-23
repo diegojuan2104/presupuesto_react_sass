@@ -19,6 +19,11 @@ function App() {
   //UseEffect que actuliza el restante
   useEffect(() => {
     if(creargasto){
+    
+    if(gasto.cantidad > restante){
+      alert("Este Gasto sobrepasa el presupuesto");
+      return;
+    }
     guardarGastos([...gastos, gasto]);
 
 

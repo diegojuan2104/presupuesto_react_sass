@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './control-presupuesto.styles.scss'
+import {revisarPresupuesto} from "../../helpers";
 
 const ControlPresupuesto = ({presupuesto,restante}) => {
     return (  
@@ -10,7 +11,7 @@ const ControlPresupuesto = ({presupuesto,restante}) => {
                 Presupuesto:     ${presupuesto}
             </div>
             <div className="restante">
-                Restante:        <span className="valor-restante">${restante}</span>
+                Restante:        <span className={revisarPresupuesto(presupuesto,restante)}>${restante}</span>
             </div>
         </div>
     );
