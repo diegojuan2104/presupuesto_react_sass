@@ -51,5 +51,17 @@ h1{
                 width: 250px;
             }
         }
+
+        .contenido-principal{
+            .contenido-gastos{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
     }
+
+  
+
+
 }
